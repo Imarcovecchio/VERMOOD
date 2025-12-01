@@ -13,12 +13,41 @@ export default function SubscriptionForm() {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Datos enviados:", formData)
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    setLoading(true)
+    setError("")
+
+    try {
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_BACKEND_URL + "/subscriptions",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      )
+
+      if (!response.ok) throw new Error("Error al procesar la suscripción")
+
+      setSubmitted(true)
+      setTimeout(() => setSubmitted(false), 3000)
+
+      setFormData({
+        nombre: "",
+        email: "",
+        phone: "",
+        plan: "clasica",
+      })
+    } catch (err) {
+      setError("Ocurrió un error. Intenta nuevamente.")
+      console.error(err)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -33,6 +62,7 @@ export default function SubscriptionForm() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Nombre */}
             <div>
               <label htmlFor="nombre" className="block mb-2 font-semibold text-sm">
                 Nombre completo
@@ -51,6 +81,7 @@ export default function SubscriptionForm() {
               </div>
             </div>
 
+            {/* Email */}
             <div>
               <label htmlFor="email" className="block mb-2 font-semibold text-sm">
                 Correo electrónico
@@ -68,7 +99,9 @@ export default function SubscriptionForm() {
                 />
               </div>
             </div>
-             <div>
+
+            {/* Teléfono */}
+            <div>
               <label htmlFor="phone" className="block text-sm font-semibold mb-2 text-card-foreground">
                 Teléfono
               </label>
@@ -86,6 +119,7 @@ export default function SubscriptionForm() {
               </div>
             </div>
 
+            {/* Plan */}
             <div>
               <label htmlFor="plan" className="block mb-2 font-semibold text-sm">
                 Selecciona tu membresía
@@ -105,12 +139,15 @@ export default function SubscriptionForm() {
               </div>
             </div>
 
+            {/* Botón */}
             <button
               type="submit"
-              disabled={submitted}
+              disabled={loading || submitted}
               className="w-full bg-accent text-accent-foreground px-8 py-5 rounded-xl hover:opacity-90 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] disabled:opacity-100 disabled:cursor-not-allowed mt-8 flex items-center justify-center gap-2"
             >
-              {submitted ? (
+              {loading ? (
+                <span>Enviando...</span>
+              ) : submitted ? (
                 <>
                   <CheckCircle2 size={24} />
                   <span>¡Enviado correctamente!</span>
@@ -121,7 +158,13 @@ export default function SubscriptionForm() {
             </button>
           </form>
 
-          <p className="text-center text-sm text-muted-foreground mt-6">🔒 Tus datos están seguros y protegidos</p>
+          {error && (
+            <p className="text-center text-red-500 font-semibold mt-4">{error}</p>
+          )}
+
+          <p className="text-center text-sm text-muted-foreground mt-6">
+            🔒 Tus datos están seguros y protegidos
+          </p>
         </div>
       </div>
     </section>
