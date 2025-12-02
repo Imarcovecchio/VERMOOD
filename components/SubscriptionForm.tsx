@@ -23,7 +23,7 @@ export default function SubscriptionForm() {
 
     try {
       const response = await fetch(
-        process.env.NEXT_PUBLIC_BACKEND_URL + "/api/subscriptions",
+        process.env.NEXT_PUBLIC_BACKEND_URL + "/api/SubscriptionsApi",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
