@@ -260,7 +260,7 @@ function SubscriptionForm() {
         setLoading(true);
         setError("");
         try {
-            const response = await fetch(process.env.NEXT_PUBLIC_BACKEND_URL + "/subscriptions", {
+            const response = await fetch(process.env.NEXT_PUBLIC_BACKEND_URL + "/api/SubscriptionsApi", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
