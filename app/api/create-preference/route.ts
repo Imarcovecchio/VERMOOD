@@ -14,7 +14,7 @@ export async function POST(request: Request) {
           title: body.plan,
           quantity: 1,
           currency_id: "ARS",
-          unit_price: 1000,
+          unit_price: Number(body.price),
         },
       ],
       back_urls: {
