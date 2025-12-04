@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
 
     // Precios según el plan
     const prices: Record<string, number> = {
-      clasica: 8500,
+      clasica: 250,
       premium: 12500,
       elite: 22500,
     }
