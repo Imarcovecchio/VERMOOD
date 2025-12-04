@@ -22,30 +22,23 @@ export default function SubscriptionForm() {
     setError("")
 
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_BACKEND_URL + "/api/SubscriptionsApi",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      )
+      // Crear preferencia de pago en Mercado Pago
+      const response = await fetch("/api/create-preference", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
 
       if (!response.ok) throw new Error("Error al procesar la suscripción")
 
-      setSubmitted(true)
-      setTimeout(() => setSubmitted(false), 3000)
+      const data = await response.json()
 
-      setFormData({
-        nombre: "",
-        email: "",
-        phone: "",
-        plan: "clasica",
-      })
+      // Redirigir a Mercado Pago para completar el pago
+      console.log("[v0] Redirigiendo a Mercado Pago:", data.init_point)
+      window.location.href = data.init_point
     } catch (err) {
       setError("Ocurrió un error. Intenta nuevamente.")
       console.error(err)
-    } finally {
       setLoading(false)
     }
   }
@@ -146,24 +139,22 @@ export default function SubscriptionForm() {
               className="w-full bg-accent text-accent-foreground px-8 py-5 rounded-xl hover:opacity-90 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] disabled:opacity-100 disabled:cursor-not-allowed mt-8 flex items-center justify-center gap-2"
             >
               {loading ? (
-                <span>Enviando...</span>
+                <span>Procesando...</span>
               ) : submitted ? (
                 <>
                   <CheckCircle2 size={24} />
                   <span>¡Enviado correctamente!</span>
                 </>
               ) : (
-                <span>Suscribirme ahora</span>
+                <span>Continuar al pago</span>
               )}
             </button>
           </form>
 
-          {error && (
-            <p className="text-center text-red-500 font-semibold mt-4">{error}</p>
-          )}
+          {error && <p className="text-center text-red-500 font-semibold mt-4">{error}</p>}
 
           <p className="text-center text-sm text-muted-foreground mt-6">
-            🔒 Tus datos están seguros y protegidos
+            🔒 Serás redirigido a Mercado Pago para completar el pago de forma segura
           </p>
         </div>
       </div>

@@ -56,10 +56,55 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/pago/exito/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/pago/exito">> = Specific
+  const handler = {} as typeof import("../../../app/pago/exito/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/pago/fallo/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/pago/fallo">> = Specific
+  const handler = {} as typeof import("../../../app/pago/fallo/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/pago/pendiente/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/pago/pendiente">> = Specific
+  const handler = {} as typeof import("../../../app/pago/pendiente/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/ api/create-preference/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/ api/create-preference">> = Specific
+  const handler = {} as typeof import("../../../app/ api/create-preference/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/ api/test-env/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/ api/test-env">> = Specific
   const handler = {} as typeof import("../../../app/ api/test-env/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/ api/webhooks/mercadopago/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/ api/webhooks/mercadopago">> = Specific
+  const handler = {} as typeof import("../../../app/ api/webhooks/mercadopago/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
