@@ -26,19 +26,22 @@ export async function POST(request: NextRequest) {
       // Si el pago fue aprobado, enviar datos al backend
       if (payment.status === "approved") {
         const externalReference = JSON.parse(payment.external_reference || "{}")
-        console.log("[v0] Pago aprobado, enviando datos al backend:", externalReference)
+        console.log("[v0] Pago aprobado, datos del usuario:", externalReference)
 
-        // Enviar los datos al backend de C#
-        const backendResponse = await fetch(process.env.NEXT_PUBLIC_BACKEND_URL + "/api/SubscriptionsApi", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(externalReference),
-        })
+        // Aquí puedes agregar lógica para guardar en tu base de datos
+        // O enviar al backend de C# si lo tienes configurado
+        if (process.env.NEXT_PUBLIC_BACKEND_URL) {
+          const backendResponse = await fetch(process.env.NEXT_PUBLIC_BACKEND_URL + "/api/SubscriptionsApi", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(externalReference),
+          })
 
-        if (!backendResponse.ok) {
-          console.error("[v0] Error al guardar en backend")
-        } else {
-          console.log("[v0] Suscripción guardada exitosamente en backend")
+          if (!backendResponse.ok) {
+            console.error("[v0] Error al guardar en backend")
+          } else {
+            console.log("[v0] Suscripción guardada exitosamente en backend")
+          }
         }
       }
     }
