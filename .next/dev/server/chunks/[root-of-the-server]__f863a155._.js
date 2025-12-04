@@ -54,6 +54,7 @@ async function POST(request) {
     try {
         const body = await request.json();
         console.log("[v0] Datos recibidos:", body);
+        const baseUrl = process.env.BASE_URL;
         const preference = {
             items: [
                 {
@@ -64,9 +65,9 @@ async function POST(request) {
                 }
             ],
             back_urls: {
-                success: "http://localhost:3000/pago/exito",
-                failure: "http://localhost:3000/pago/fallo",
-                pending: "http://localhost:3000/pago/pendiente"
+                success: `${baseUrl}${process.env.SUCCESS_PATH}`,
+                failure: `${baseUrl}${process.env.FAILURE_PATH}`,
+                pending: `${baseUrl}${process.env.PENDING_PATH}`
             },
             auto_return: "approved"
         };

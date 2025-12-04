@@ -1,0 +1,10 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/create-preference/route": "app/api/create-preference/route.js",
+  "/api/mercadopago/route": "app/api/mercadopago/route.js",
+  "/page": "app/page.js",
+  "/pago/exito/page": "app/pago/exito/page.js",
+  "/pago/fallo/page": "app/pago/fallo/page.js",
+  "/pago/pendiente/page": "app/pago/pendiente/page.js"
+}
