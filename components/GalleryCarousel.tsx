@@ -4,9 +4,10 @@ import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const images = [
-  "/vermouth-glasses-elegant-setup.jpg",
-  "/vermouth-bottles-collection.jpg",
-  "/vermouth-tasting-event.jpg",
+  "/bolsita.jpeg",
+  "/cajita.jpeg",
+  "/producto.jpeg",
+  "/vern.jpeg"
 ]
 
 export default function GalleryCarousel() {
@@ -34,7 +35,7 @@ export default function GalleryCarousel() {
               src={images[currentIndex] || "/placeholder.svg"}
               alt={`Gallery image ${currentIndex + 1}`}
               className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
-            />
+            />  
             <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
           </div>
 

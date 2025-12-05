@@ -213,10 +213,10 @@ export default function App() {
           {/* Plan Clásico */}
           <div className="group p-8 rounded-3xl border-2 border-border bg-card hover:bg-card/80 text-card-foreground shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
             <div className="flex items-center justify-between mb-4">
-              <h4 className="text-2xl font-serif font-bold">Clásica</h4>
+              <h4 className="text-2xl font-serif font-bold">Membresia Mistica</h4>
               <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-2xl">🍷</div>
             </div>
-            <p className="text-sm text-muted-foreground mb-6">Para quienes empiezan el ritual.</p>
+            <p className="text-sm text-muted-foreground mb-6">La puerta de entrada al ritual del vermut. Una botella para descubrir, un sifon para completar la magia.</p>
             <div className="mb-8">
               <p className="text-4xl font-bold mb-1">$8.500</p>
               <p className="text-sm text-muted-foreground">por mes</p>
@@ -228,11 +228,11 @@ export default function App() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-accent mt-0.5">✓</span>
-                <span>Recetario digital</span>
+                <span>1 sifon de soda</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-accent mt-0.5">✓</span>
-                <span>Newsletter exclusivo</span>
+                <span>Vaso exclusivo</span>
               </li>
             </ul>
             <a
@@ -248,10 +248,10 @@ export default function App() {
               POPULAR
             </div>
             <div className="flex items-center justify-between mb-4">
-              <h4 className="text-2xl font-serif font-bold">Premium</h4>
+              <h4 className="text-2xl font-serif font-bold">Membresia Rebelde</h4>
               <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-2xl">🥂</div>
             </div>
-            <p className="text-sm text-muted-foreground mb-6">Ideal para los curiosos del sabor.</p>
+            <p className="text-sm text-muted-foreground mb-6">Doble vermut, sin ataduras. Para los que ya conocen el camino y eligen vivirlo a su manera.</p>
             <div className="mb-8">
               <p className="text-4xl font-bold mb-1">$12.500</p>
               <p className="text-sm text-muted-foreground">por mes</p>
@@ -263,11 +263,11 @@ export default function App() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-accent mt-0.5">✓</span>
-                <span>Acceso a catas mensuales</span>
+                <span>Sifon de soda</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-accent mt-0.5">✓</span>
-                <span>Descuentos exclusivos</span>
+                <span>Vaso exclusivo</span>
               </li>
             </ul>
             <a

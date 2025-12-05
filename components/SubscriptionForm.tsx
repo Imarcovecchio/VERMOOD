@@ -9,13 +9,12 @@ export default function SubscriptionForm() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
-  type PlanType = "clasica" | "premium" | "elite" | "prueba";
+  type PlanType = "clasica" | "premium" | "elite" ;
 
  const prices: Record<PlanType, number> = {
   clasica: 250,
   premium: 12500,
   elite: 22500,
-  prueba: 1,
 }
 const [formData, setFormData] = useState({
   nombre: "",
@@ -81,7 +80,7 @@ const [formData, setFormData] = useState({
                   value={formData.nombre}
                   onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
                   className="w-full pl-12 pr-4 py-4 rounded-xl bg-input border-2 border-border text-foreground focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
-                  placeholder="Juan Pérez"
+                  placeholder="Ingrese nombre"
                   required
                 />
               </div>
@@ -100,7 +99,7 @@ const [formData, setFormData] = useState({
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full pl-12 pr-4 py-4 rounded-xl bg-input border-2 border-border text-foreground focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
-                  placeholder="juan@ejemplo.com"
+                  placeholder="tucorreo@ejemplo.com"
                   required
                 />
               </div>
@@ -136,7 +135,7 @@ const [formData, setFormData] = useState({
     value={formData.adress}
     onChange={(e) => setFormData({ ...formData, adress: e.target.value })}
     className="w-full pl-4 pr-4 py-4 rounded-xl bg-input border-2 border-border text-foreground"
-    placeholder="Calle 123, CABA"
+    placeholder="Ingrese la direccion"
     required
   />
 </div>
@@ -169,10 +168,9 @@ const [formData, setFormData] = useState({
                   onChange={(e) => setFormData({ ...formData, plan: e.target.value as PlanType, price: prices[e.target.value as PlanType] })}
                   className="w-full pl-12 pr-4 py-4 rounded-xl bg-input border-2 border-border text-foreground focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300 appearance-none cursor-pointer"
                 >
-                  <option value="clasica">Clásica - $250/mes</option>
-                  <option value="premium">Premium - $12.500/mes</option>
-                  <option value="elite">Elite - $22.500/mes</option>
-                  <option value="prueba">Prueba - $1/mes</option>
+                  <option value="clasica">Prueba - $250/mes</option>
+                  <option value="premium">Membresia Rebelde - $12.500/mes</option>
+                  <option value="elite">Membresia Mistica - $22.500/mes</option>
                 </select>
               </div>
             </div>
