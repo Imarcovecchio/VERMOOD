@@ -10,35 +10,21 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ message: "Evento ignorado" })
     }
 
-    const paymentId = body.data.id;
-console.log("[Webhook] paymentId recibido:", paymentId);
+    const paymentId = body.data.id
+    console.log("[Webhook] paymentId recibido:", paymentId)
 
-// Simulamos la respuesta de Mercado Pago
-const payment = {
-  id: paymentId,
-  status: "approved",
-  transaction_amount: 12500,
-  external_reference: JSON.stringify({
-    Nombre: "Test User",
-    Email: "test@mail.com",
-    Phone: "123456789",
-    Plan: "premium",
-    Adress: "Fake 123",
-    EsRegalo: false
-  })
-};
+    // Obtener información completa del pago desde MercadoPago
+    const paymentResponse = await fetch(`https://api.mercadopago.com/v1/payments/${paymentId}`, {
+      headers: {
+        Authorization: `Bearer ${process.env.MERCADOPAGO_ACCESS_TOKEN}`,
+      },
+    })
 
+    if (!paymentResponse.ok) {
+      throw new Error("No se pudo obtener el pago desde MercadoPago")
+    }
 
-    // const paymentResponse = await fetch(`https://api.mercadopago.com/v1/payments/${paymentId}`, {
-//   headers: { Authorization: `Bearer ${process.env.MERCADOPAGO_ACCESS_TOKEN}` },
-// })
-
-// if (!paymentResponse.ok) {
-//   throw new Error("No se pudo obtener el pago desde MercadoPago")
-// }
-
-
-    
+    const payment = await paymentResponse.json()
     console.log("[Webhook] Datos del pago:", payment)
 
     // Solo procesamos pagos aprobados
