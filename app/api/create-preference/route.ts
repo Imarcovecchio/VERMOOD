@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
       elite: "Membresía Elite",
     }
 
-    const price = prices[plan] || 8500
+    const price = prices[plan] || 250
     const planName = planNames[plan] || "Membresía Clásica"
 
     console.log("[v0] Plan seleccionado:", planName, "- Precio:", price)
