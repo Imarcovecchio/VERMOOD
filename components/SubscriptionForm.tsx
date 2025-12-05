@@ -12,7 +12,7 @@ export default function SubscriptionForm() {
   type PlanType = "clasica" | "premium" | "elite" | "prueba";
 
  const prices: Record<PlanType, number> = {
-  clasica: 8500,
+  clasica: 250,
   premium: 12500,
   elite: 22500,
   prueba: 1,
@@ -22,7 +22,7 @@ const [formData, setFormData] = useState({
   email: "",
   phone: "",
   plan: "clasica" as PlanType,
-  price: 8500,
+  price: 250,
 })
 
 
@@ -136,7 +136,7 @@ const [formData, setFormData] = useState({
                   onChange={(e) => setFormData({ ...formData, plan: e.target.value as PlanType, price: prices[e.target.value as PlanType] })}
                   className="w-full pl-12 pr-4 py-4 rounded-xl bg-input border-2 border-border text-foreground focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300 appearance-none cursor-pointer"
                 >
-                  <option value="clasica">Clásica - $8.500/mes</option>
+                  <option value="clasica">Clásica - $250/mes</option>
                   <option value="premium">Premium - $12.500/mes</option>
                   <option value="elite">Elite - $22.500/mes</option>
                   <option value="prueba">Prueba - $1/mes</option>
