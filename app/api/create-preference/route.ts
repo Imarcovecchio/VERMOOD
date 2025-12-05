@@ -3,9 +3,9 @@ import { type NextRequest, NextResponse } from "next/server"
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { nombre, email, phone, plan } = body
+    const { nombre, email, phone, plan, adress, esRegalo } = body
 
-    console.log("[v0] Datos recibidos:", { nombre, email, phone, plan })
+    console.log("[v0] Datos recibidos:", { nombre, email, phone, plan, adress, esRegalo })
 
     // Precios según el plan
     const prices: Record<string, number> = {
@@ -50,7 +50,14 @@ export async function POST(request: NextRequest) {
         pending: `${baseUrl}${process.env.PENDING_PATH || "/pago/pendiente"}`,
       },
       auto_return: "approved",
-      external_reference: JSON.stringify({ nombre, email, phone, plan }),
+      external_reference: JSON.stringify({
+        Nombre: nombre,
+        Email: email,
+        Phone: phone,
+        Plan: plan,
+        Adress: adress,
+        EsRegalo: esRegalo,
+      }),
       notification_url: `${baseUrl}/api/webhooks/mercadopago`,
     }
 

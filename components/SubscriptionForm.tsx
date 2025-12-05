@@ -21,6 +21,8 @@ const [formData, setFormData] = useState({
   nombre: "",
   email: "",
   phone: "",
+  adress: "",
+  esRegalo: false,
   plan: "clasica" as PlanType,
   price: 250,
 })
@@ -122,6 +124,37 @@ const [formData, setFormData] = useState({
                 />
               </div>
             </div>
+
+            {/* Dirección */}
+<div>
+  <label htmlFor="adress" className="block mb-2 font-semibold text-sm">
+    Dirección
+  </label>
+  <input
+    type="text"
+    id="adress"
+    value={formData.adress}
+    onChange={(e) => setFormData({ ...formData, adress: e.target.value })}
+    className="w-full pl-4 pr-4 py-4 rounded-xl bg-input border-2 border-border text-foreground"
+    placeholder="Calle 123, CABA"
+    required
+  />
+</div>
+
+{/* Es regalo */}
+<div className="flex items-center gap-3">
+  <input
+    type="checkbox"
+    id="esRegalo"
+    checked={formData.esRegalo}
+    onChange={(e) => setFormData({ ...formData, esRegalo: e.target.checked })}
+    className="h-5 w-5"
+  />
+  <label htmlFor="esRegalo" className="text-sm font-semibold">
+    ¿Es un regalo?
+  </label>
+</div>
+
 
             {/* Plan */}
             <div>

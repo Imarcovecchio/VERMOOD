@@ -267,7 +267,7 @@ function SubscriptionForm() {
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const prices = {
-        clasica: 8500,
+        clasica: 250,
         premium: 12500,
         elite: 22500,
         prueba: 1
@@ -276,8 +276,10 @@ function SubscriptionForm() {
         nombre: "",
         email: "",
         phone: "",
+        adress: "",
+        esRegalo: false,
         plan: "clasica",
-        price: 8500
+        price: 250
     });
     const handleSubmit = async (e)=>{
         e.preventDefault();
@@ -313,7 +315,7 @@ function SubscriptionForm() {
                     className: "absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5 rounded-3xl blur-3xl -z-10"
                 }, void 0, false, {
                     fileName: "[project]/components/SubscriptionForm.tsx",
-                    lineNumber: 60,
+                    lineNumber: 62,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -327,7 +329,7 @@ function SubscriptionForm() {
                                     children: "Únete al Club"
                                 }, void 0, false, {
                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 66,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -335,13 +337,13 @@ function SubscriptionForm() {
                                     children: "Comienza tu viaje sensorial hoy"
                                 }, void 0, false, {
                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                    lineNumber: 65,
+                                    lineNumber: 67,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/SubscriptionForm.tsx",
-                            lineNumber: 63,
+                            lineNumber: 65,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -356,7 +358,7 @@ function SubscriptionForm() {
                                             children: "Nombre completo"
                                         }, void 0, false, {
                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                            lineNumber: 71,
+                                            lineNumber: 73,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -367,7 +369,7 @@ function SubscriptionForm() {
                                                     size: 20
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                                    lineNumber: 75,
+                                                    lineNumber: 77,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -383,19 +385,19 @@ function SubscriptionForm() {
                                                     required: true
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                                    lineNumber: 76,
+                                                    lineNumber: 78,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                            lineNumber: 74,
+                                            lineNumber: 76,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                    lineNumber: 70,
+                                    lineNumber: 72,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -406,7 +408,7 @@ function SubscriptionForm() {
                                             children: "Correo electrónico"
                                         }, void 0, false, {
                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                            lineNumber: 90,
+                                            lineNumber: 92,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -417,7 +419,7 @@ function SubscriptionForm() {
                                                     size: 20
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                                    lineNumber: 94,
+                                                    lineNumber: 96,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -433,19 +435,19 @@ function SubscriptionForm() {
                                                     required: true
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                                    lineNumber: 95,
+                                                    lineNumber: 97,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 95,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                    lineNumber: 89,
+                                    lineNumber: 91,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -456,7 +458,7 @@ function SubscriptionForm() {
                                             children: "Teléfono"
                                         }, void 0, false, {
                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                            lineNumber: 109,
+                                            lineNumber: 111,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -467,7 +469,7 @@ function SubscriptionForm() {
                                                     size: 20
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                                    lineNumber: 113,
+                                                    lineNumber: 115,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -483,20 +485,85 @@ function SubscriptionForm() {
                                                     required: true
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                                    lineNumber: 114,
+                                                    lineNumber: 116,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                            lineNumber: 112,
+                                            lineNumber: 114,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                    lineNumber: 108,
+                                    lineNumber: 110,
                                     columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                            htmlFor: "adress",
+                                            className: "block mb-2 font-semibold text-sm",
+                                            children: "Dirección"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/SubscriptionForm.tsx",
+                                            lineNumber: 130,
+                                            columnNumber: 3
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "text",
+                                            id: "adress",
+                                            value: formData.adress,
+                                            onChange: (e)=>setFormData({
+                                                    ...formData,
+                                                    adress: e.target.value
+                                                }),
+                                            className: "w-full pl-4 pr-4 py-4 rounded-xl bg-input border-2 border-border text-foreground",
+                                            placeholder: "Calle 123, CABA",
+                                            required: true
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/SubscriptionForm.tsx",
+                                            lineNumber: 133,
+                                            columnNumber: 3
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/SubscriptionForm.tsx",
+                                    lineNumber: 129,
+                                    columnNumber: 1
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-3",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "checkbox",
+                                            id: "esRegalo",
+                                            checked: formData.esRegalo,
+                                            onChange: (e)=>setFormData({
+                                                    ...formData,
+                                                    esRegalo: e.target.checked
+                                                }),
+                                            className: "h-5 w-5"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/SubscriptionForm.tsx",
+                                            lineNumber: 146,
+                                            columnNumber: 3
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                            htmlFor: "esRegalo",
+                                            className: "text-sm font-semibold",
+                                            children: "¿Es un regalo?"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/SubscriptionForm.tsx",
+                                            lineNumber: 153,
+                                            columnNumber: 3
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/SubscriptionForm.tsx",
+                                    lineNumber: 145,
+                                    columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: [
@@ -506,7 +573,7 @@ function SubscriptionForm() {
                                             children: "Selecciona tu membresía"
                                         }, void 0, false, {
                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                            lineNumber: 128,
+                                            lineNumber: 161,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -517,7 +584,7 @@ function SubscriptionForm() {
                                                     size: 20
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                                    lineNumber: 132,
+                                                    lineNumber: 165,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -532,10 +599,10 @@ function SubscriptionForm() {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                             value: "clasica",
-                                                            children: "Clásica - $8.500/mes"
+                                                            children: "Clásica - $250/mes"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                                            lineNumber: 139,
+                                                            lineNumber: 172,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -543,7 +610,7 @@ function SubscriptionForm() {
                                                             children: "Premium - $12.500/mes"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                                            lineNumber: 140,
+                                                            lineNumber: 173,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -551,7 +618,7 @@ function SubscriptionForm() {
                                                             children: "Elite - $22.500/mes"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                                            lineNumber: 141,
+                                                            lineNumber: 174,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -559,25 +626,25 @@ function SubscriptionForm() {
                                                             children: "Prueba - $1/mes"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                                            lineNumber: 142,
+                                                            lineNumber: 175,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                                    lineNumber: 133,
+                                                    lineNumber: 166,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/SubscriptionForm.tsx",
-                                            lineNumber: 131,
+                                            lineNumber: 164,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 160,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -588,7 +655,7 @@ function SubscriptionForm() {
                                         children: "Procesando..."
                                     }, void 0, false, {
                                         fileName: "[project]/components/SubscriptionForm.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 187,
                                         columnNumber: 17
                                     }, this) : submitted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                         children: [
@@ -596,14 +663,14 @@ function SubscriptionForm() {
                                                 size: 24
                                             }, void 0, false, {
                                                 fileName: "[project]/components/SubscriptionForm.tsx",
-                                                lineNumber: 157,
+                                                lineNumber: 190,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "¡Enviado correctamente!"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/SubscriptionForm.tsx",
-                                                lineNumber: 158,
+                                                lineNumber: 191,
                                                 columnNumber: 19
                                             }, this)
                                         ]
@@ -611,18 +678,18 @@ function SubscriptionForm() {
                                         children: "Continuar al pago"
                                     }, void 0, false, {
                                         fileName: "[project]/components/SubscriptionForm.tsx",
-                                        lineNumber: 161,
+                                        lineNumber: 194,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/SubscriptionForm.tsx",
-                                    lineNumber: 148,
+                                    lineNumber: 181,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/SubscriptionForm.tsx",
-                            lineNumber: 68,
+                            lineNumber: 70,
                             columnNumber: 11
                         }, this),
                         error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -630,7 +697,7 @@ function SubscriptionForm() {
                             children: error
                         }, void 0, false, {
                             fileName: "[project]/components/SubscriptionForm.tsx",
-                            lineNumber: 166,
+                            lineNumber: 199,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -638,28 +705,28 @@ function SubscriptionForm() {
                             children: "🔒 Serás redirigido a Mercado Pago para completar el pago de forma segura"
                         }, void 0, false, {
                             fileName: "[project]/components/SubscriptionForm.tsx",
-                            lineNumber: 168,
+                            lineNumber: 201,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/SubscriptionForm.tsx",
-                    lineNumber: 62,
+                    lineNumber: 64,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/SubscriptionForm.tsx",
-            lineNumber: 59,
+            lineNumber: 61,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/SubscriptionForm.tsx",
-        lineNumber: 58,
+        lineNumber: 60,
         columnNumber: 5
     }, this);
 }
-_s(SubscriptionForm, "FTp5TQg05xE4eczOyPwbx69+9ww=");
+_s(SubscriptionForm, "wVzEsHzO3Kg2GILzTpK2oOLFYq4=");
 _c = SubscriptionForm;
 var _c;
 __turbopack_context__.k.register(_c, "SubscriptionForm");

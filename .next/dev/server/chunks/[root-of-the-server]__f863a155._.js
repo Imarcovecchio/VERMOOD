@@ -53,16 +53,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$serv
 async function POST(request) {
     try {
         const body = await request.json();
-        const { nombre, email, phone, plan } = body;
+        const { nombre, email, phone, plan, adress, esRegalo } = body;
         console.log("[v0] Datos recibidos:", {
             nombre,
             email,
             phone,
-            plan
+            plan,
+            adress,
+            esRegalo
         });
         // Precios según el plan
         const prices = {
-            clasica: 8500,
+            clasica: 250,
             premium: 12500,
             elite: 22500
         };
@@ -71,7 +73,7 @@ async function POST(request) {
             premium: "Membresía Premium",
             elite: "Membresía Elite"
         };
-        const price = prices[plan] || 8500;
+        const price = prices[plan] || 250;
         const planName = planNames[plan] || "Membresía Clásica";
         console.log("[v0] Plan seleccionado:", planName, "- Precio:", price);
         const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.BASE_URL;
@@ -99,10 +101,12 @@ async function POST(request) {
             },
             auto_return: "approved",
             external_reference: JSON.stringify({
-                nombre,
-                email,
-                phone,
-                plan
+                Nombre: nombre,
+                Email: email,
+                Phone: phone,
+                Plan: plan,
+                Adress: adress,
+                EsRegalo: esRegalo
             }),
             notification_url: `${baseUrl}/api/webhooks/mercadopago`
         };
